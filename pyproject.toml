@@ -1,0 +1,28 @@
+[project]
+name = "ticket-classifier"
+version = "0.1.0"
+description = "Customer support ticket classifier using traditional ML (scikit-learn)"
+requires-python = ">=3.11"
+dependencies = [
+    "scikit-learn>=1.5.0",
+    "pandas>=2.0",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+    "joblib>=1.4.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "httpx>=0.27.0",
+    "ruff>=0.5.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

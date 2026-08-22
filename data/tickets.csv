@@ -1,0 +1,390 @@
+ticket_id,text,category,priority,sentiment
+1,My payment was charged twice please refund,billing,high,negative
+2,I cannot login to my account password reset not working,account,high,negative
+3,How do I change my subscription plan,billing,low,neutral
+4,The app crashes when I open settings,technical,high,negative
+5,I want to cancel my subscription,billing,medium,negative
+6,Shipping is delayed by 2 weeks,shipping,medium,negative
+7,I received the wrong item in my order,shipping,high,negative
+8,Can you update my email address,account,low,neutral
+9,The website is very slow today,technical,medium,negative
+10,I was charged after cancelling my subscription,billing,high,negative
+11,How do I track my order,shipping,low,neutral
+12,My account was hacked someone changed my password,account,high,negative
+13,The mobile app keeps freezing on Android,technical,high,negative
+14,I need an invoice for my last purchase,billing,low,neutral
+15,Package arrived damaged need replacement,shipping,high,negative
+16,Two factor authentication is not sending codes,account,medium,negative
+17,Your API returns 500 error on the /users endpoint,technical,high,negative
+18,I want to upgrade from basic to premium plan,billing,low,positive
+19,Order stuck in processing for 5 days,shipping,medium,negative
+20,Cannot change my profile picture upload fails,technical,medium,negative
+21,Refund not received after 10 business days,billing,high,negative
+22,How to delete my account permanently,account,medium,neutral
+23,App notification sounds not working on iOS,technical,low,negative
+24,Delivery address is wrong can I change it,shipping,medium,neutral
+25,I see unauthorized charges on my credit card,billing,high,negative
+26,Cannot connect my Google account for SSO login,account,medium,negative
+27,Search function returns no results for any query,technical,high,negative
+28,Express shipping option not available in my area,shipping,low,neutral
+29,I need to update my billing credit card,billing,low,neutral
+30,Forgot my username how to recover it,account,medium,neutral
+31,Page takes 30 seconds to load on desktop browser,technical,medium,negative
+32,International shipping rates are too expensive,shipping,low,negative
+33,Double charged for annual subscription renewal,billing,high,negative
+34,My account is locked after too many login attempts,account,high,negative
+35,Dark mode not working properly colors are wrong,technical,low,negative
+36,Package returned to sender wrong address on label,shipping,high,negative
+37,How to apply a discount coupon code,billing,low,neutral
+38,Cannot verify my phone number for account setup,account,medium,negative
+39,File upload feature broken for PDFs over 5MB,technical,medium,negative
+40,Same day delivery not showing as option anymore,shipping,medium,negative
+41,Subscription auto-renewed but I wanted to cancel,billing,high,negative
+42,Need to merge two duplicate accounts,account,medium,neutral
+43,Video player buffering constantly on all browsers,technical,medium,negative
+44,Return label not working QR code expired,shipping,medium,negative
+45,Tax calculation seems incorrect on my invoice,billing,medium,negative
+46,Cannot change my account language settings,account,low,neutral
+47,SSL certificate warning when accessing your site,technical,high,negative
+48,Package lost in transit no tracking updates for a week,shipping,high,negative
+49,Monthly charge increased without any notification,billing,high,negative
+50,Session expires too quickly have to login every 5 min,account,medium,negative
+51,Payment declined but my card works everywhere else,billing,medium,negative
+52,My order was delivered to the wrong address,shipping,high,negative
+53,App freezes when uploading large images,technical,medium,negative
+54,I need help resetting my security questions,account,medium,neutral
+55,Promo code not applying the correct discount,billing,medium,negative
+56,Tracking number shows delivered but I did not receive,shipping,high,negative
+57,Dashboard charts not loading showing blank page,technical,medium,negative
+58,I want to change my account username,account,low,neutral
+59,Being charged for features I do not use,billing,medium,negative
+60,Estimated delivery date keeps changing every day,shipping,medium,negative
+61,I was billed twice for the same order this month,billing,high,negative
+62,Two charges of 49.99 appeared on my statement yesterday,billing,high,negative
+63,Refund promised three weeks ago has still not arrived,billing,high,negative
+64,You took money after I cancelled my subscription,billing,high,negative
+65,Card charged but the order never appeared in my history,billing,high,negative
+66,Invoice total does not match what the checkout page showed,billing,high,negative
+67,Charged the annual rate when I selected monthly,billing,high,negative
+68,My card was declined but the amount still left my bank,billing,high,negative
+69,Duplicate transaction reference 88123 needs reversing,billing,high,negative
+70,Been overcharged VAT on every invoice since June,billing,high,negative
+71,Subscription renewed automatically without any warning email,billing,medium,negative
+72,Can I switch from monthly to yearly billing partway through,billing,medium,neutral
+73,The discount code was accepted but not applied to the total,billing,medium,negative
+74,"Need a VAT invoice for accounting, the receipt is not enough",billing,medium,neutral
+75,Please update the billing address on my next invoice,billing,medium,neutral
+76,Why did the price go up compared to last month,billing,medium,negative
+77,Can I pay by bank transfer instead of card,billing,medium,neutral
+78,Receipt shows the wrong company name on it,billing,medium,negative
+79,How do I add a second payment method to the account,billing,medium,neutral
+80,Proration after upgrading mid cycle looks wrong,billing,medium,negative
+81,Where can I download invoices from previous years,billing,low,neutral
+82,Do you offer a discount for non profit organisations,billing,low,neutral
+83,Is the price shown including tax or excluding,billing,low,neutral
+84,What currencies do you accept for payment,billing,low,neutral
+85,Can I get a copy of the receipt sent to a second email,billing,low,neutral
+86,Curious whether there is a student plan available,billing,low,neutral
+87,Does the yearly plan work out cheaper overall,billing,low,neutral
+88,Would like to understand how usage based pricing is calculated,billing,low,neutral
+89,Payment failed again even though my card has funds,billing,high,negative
+90,Direct debit was taken twice this quarter,billing,high,negative
+91,Cancelled last year and still being charged every month,billing,high,negative
+92,Credit note issued but the balance has not changed,billing,medium,negative
+93,Billing portal shows an amount due that I already settled,billing,medium,negative
+94,Need the invoice split across two cost centres,billing,low,neutral
+95,Does an unused month roll over to the next period,billing,low,neutral
+96,Parcel says delivered but nothing arrived at my address,shipping,high,negative
+97,Order marked shipped ten days ago and tracking has not moved,shipping,high,negative
+98,Courier left the box outside in the rain and it is ruined,shipping,high,negative
+99,Delivery went to my old address even though I updated it,shipping,high,negative
+100,The package arrived crushed and the contents are broken,shipping,high,negative
+101,Half the items are missing from the box I received,shipping,high,negative
+102,"Signed for delivery I never received, signature is not mine",shipping,high,negative
+103,Urgent order for tomorrow has not left the warehouse,shipping,high,negative
+104,Tracking number returns nothing on the courier website,shipping,medium,negative
+105,Can I change the delivery address before it ships,shipping,medium,neutral
+106,Estimated arrival keeps moving further out every day,shipping,medium,negative
+107,"Need to reschedule delivery for next week, I am away",shipping,medium,neutral
+108,"Driver could not find the building, how do I add directions",shipping,medium,negative
+109,Is it possible to collect from the depot instead,shipping,medium,neutral
+110,"Two of three parcels arrived, where is the third",shipping,medium,negative
+111,Delivery attempted while I was home and nobody knocked,shipping,medium,negative
+112,Can the courier leave it with a neighbour,shipping,medium,negative
+113,Order shipped to the wrong country entirely,shipping,high,negative
+114,How long does standard delivery usually take,shipping,low,neutral
+115,Do you ship to the Channel Islands,shipping,low,neutral
+116,What courier do you normally use,shipping,low,neutral
+117,Can I get a delivery slot on a Saturday,shipping,low,neutral
+118,Is there a charge for express shipping,shipping,low,neutral
+119,Do you send a notification when the parcel is out for delivery,shipping,low,neutral
+120,Will the item come in discreet packaging,shipping,low,neutral
+121,Can I combine two orders into one shipment,shipping,low,neutral
+122,Returns label was not included in the box,shipping,medium,negative
+123,How do I arrange a return collection,shipping,medium,neutral
+124,Parcel stuck at customs for two weeks now,shipping,high,negative
+125,Consignment shows out for delivery three days running,shipping,medium,negative
+126,Wrong item entirely was delivered to me,shipping,high,negative
+127,Do you deliver on bank holidays,shipping,low,neutral
+128,Need proof of delivery for my insurance claim,shipping,medium,negative
+129,Package thrown over the fence and the seal is broken,shipping,high,negative
+130,Can I track the order without an account,shipping,low,neutral
+131,Locked out completely after too many failed attempts,account,high,negative
+132,Password reset email never arrives no matter how often I ask,account,high,negative
+133,Someone else has logged into my account from another country,account,high,negative
+134,Two factor codes are being sent to a phone I no longer own,account,high,negative
+135,My account was suspended without any explanation,account,high,negative
+136,Cannot sign in since the email address change,account,high,negative
+137,Account appears to have been deleted along with all my data,account,high,negative
+138,Login loops back to the sign in page every time,account,high,negative
+139,Need to transfer ownership to a colleague who is taking over,account,medium,neutral
+140,How do I change the email address on file,account,medium,neutral
+141,Want to add two more users to the workspace,account,medium,negative
+142,Profile picture will not save when I upload it,account,medium,negative
+143,Cannot update my phone number in the settings page,account,medium,negative
+144,How do I enable two factor authentication,account,medium,neutral
+145,"Team member left, need to revoke their access",account,medium,negative
+146,"Session expires far too quickly, logged out constantly",account,medium,negative
+147,Notification preferences reset themselves every login,account,medium,negative
+148,Where do I download all my data before closing the account,account,medium,neutral
+149,How do I permanently close my account,account,low,neutral
+150,Can I change my username,account,low,neutral
+151,Is there a way to have multiple accounts under one email,account,low,neutral
+152,What happens to my data if I stay inactive for a year,account,low,neutral
+153,Do you support single sign on with Google,account,low,neutral
+154,Can I set the interface language to French,account,low,neutral
+155,How many devices can be signed in at once,account,low,neutral
+156,Is there an option for a dark theme,account,low,neutral
+157,Verification link in the signup email has expired,account,medium,negative
+158,"Cannot complete registration, it says the email is taken",account,high,negative
+159,Recovery codes are not being accepted,account,high,negative
+160,Want to merge two accounts I created by mistake,account,medium,negative
+161,Role permissions do not seem to apply to the new user,account,medium,negative
+162,Do you have an audit log of who signed in and when,account,low,neutral
+163,Received a security alert I did not trigger,account,high,negative
+164,Cannot remove an old device from the trusted list,account,medium,negative
+165,Is there a limit on how many team members I can invite,account,low,neutral
+166,Application crashes every time I open the reports section,technical,high,negative
+167,Site returns a 500 error on every page since this morning,technical,high,negative
+168,Export produces an empty file no matter what I select,technical,high,negative
+169,Data I saved yesterday has completely disappeared,technical,high,negative
+170,Upload fails at ninety percent every single time,technical,high,negative
+171,Search returns no results even for things I know exist,technical,high,negative
+172,The whole dashboard is blank after the latest update,technical,high,negative
+173,Sync between devices stopped working entirely,technical,high,negative
+174,Integration webhook has not fired since Tuesday,technical,high,negative
+175,API returns 401 with a key that worked last week,technical,high,negative
+176,Pages take thirty seconds to load in the afternoon,technical,medium,negative
+177,Filters reset whenever I navigate back to the list,technical,medium,negative
+178,Charts render incorrectly in Safari but fine in Chrome,technical,medium,negative
+179,Attachment preview shows a blank window,technical,medium,negative
+180,Notifications arrive hours after the event,technical,medium,negative
+181,Keyboard shortcuts stopped responding in the editor,technical,medium,negative
+182,Timezone displayed is wrong for users outside the UK,technical,medium,negative
+183,CSV import rejects valid rows without saying why,technical,medium,negative
+184,Mobile layout overlaps the buttons on smaller screens,technical,medium,negative
+185,Print view cuts off the right hand column,technical,low,negative
+186,Spelling mistake on the confirmation screen,technical,low,negative
+187,Icon for archived items is hard to distinguish,technical,low,negative
+188,Would be useful to sort the table by date added,technical,low,negative
+189,Tooltip text is cut short on long labels,technical,low,negative
+190,Is there a keyboard shortcut for creating a new record,technical,low,neutral
+191,Do you have an API rate limit documented anywhere,technical,low,neutral
+192,Dark mode contrast is too low to read comfortably,technical,low,negative
+193,"Feature request, allow bulk editing of tags",technical,low,negative
+194,Browser console shows CORS errors on the embed,technical,high,negative
+195,Scheduled job has not run for three days,technical,high,negative
+196,Report totals do not match the underlying rows,technical,high,negative
+197,Autosave overwrote my draft with an older version,technical,high,negative
+198,Two users editing the same record lose each other's changes,technical,medium,negative
+199,Emails from the system land in spam every time,technical,medium,negative
+200,Is there a sandbox environment for testing the API,technical,low,neutral
+201,"Great service as always, just need a copy of last month's invoice",billing,low,positive
+202,"Really happy with the plan, thinking of upgrading to the team tier",billing,low,positive
+203,"Thanks for sorting the refund so quickly, much appreciated",billing,low,positive
+204,"Billing portal is much clearer since the redesign, one small question about VAT",billing,low,positive
+205,"Pricing page is refreshingly straightforward, do you offer annual invoicing",billing,low,positive
+206,"Love the product, happy to move to the yearly plan if that helps you",billing,low,positive
+207,"Appreciate the quick credit note, all looks correct now",billing,low,positive
+208,"Delivery arrived a day early and beautifully packed, thank you",shipping,low,positive
+209,"Courier was excellent, just wondering how to leave feedback for them",shipping,low,positive
+210,Packaging was completely plastic free which I really appreciated,shipping,low,positive
+211,"Fantastic that you now ship to Ireland, when did that start",shipping,low,positive
+212,"Order came through perfectly, could I set up a repeat delivery",shipping,low,positive
+213,"Really impressed with the tracking updates, very clear",shipping,low,positive
+214,"Thanks for the fast dispatch, would like to order again this week",shipping,low,positive
+215,"Onboarding was the smoothest I have used, how do I invite my team",account,low,positive
+216,"Two factor setup was painless, thanks for making it simple",account,low,positive
+217,"Enjoying the product a lot, is there a way to add a second workspace",account,low,positive
+218,"Support fixed my login yesterday and were very patient, thank you",account,low,positive
+219,"The new settings layout is a big improvement, one question about roles",account,low,positive
+220,"Single sign on worked first time, delighted",account,low,positive
+221,"Happy customer here, just checking how to export my data for backup",account,low,positive
+222,"The latest release fixed my export issue, thanks for the quick turnaround",technical,low,positive
+223,"New dashboard is genuinely lovely to use, small suggestion about sorting",technical,low,positive
+224,"API docs are the best I have worked with, one question on rate limits",technical,low,positive
+225,"Performance is noticeably better this week, well done",technical,low,positive
+226,"Dark mode is great, could the contrast be nudged slightly higher",technical,low,positive
+227,"Really useful feature, would love bulk editing added at some point",technical,low,positive
+228,"Integration set up in ten minutes, very impressed",technical,low,positive
+229,Statement shows a charge I do not recognise from the 3rd,billing,high,negative
+230,Annual renewal took payment despite my cancellation request,billing,high,negative
+231,Refund was approved but nothing has reached my bank,billing,high,negative
+232,Paid by bank transfer last week and the account still shows unpaid,billing,high,negative
+233,Charged for five seats when we only have three people,billing,high,negative
+234,Overdue notice arrived for an invoice I settled in June,billing,high,negative
+235,"Card expired and now the service is suspended, need to fix urgently",billing,high,negative
+236,Two invoices issued for the same billing period,billing,high,negative
+237,Currency conversion added a fee nobody mentioned,billing,medium,negative
+238,Upgrade charged the full amount rather than the difference,billing,medium,negative
+239,Promotional rate ended without notice,billing,medium,negative
+240,Purchase order number is missing from the invoice,billing,medium,neutral
+241,Please send invoices to our finance mailbox instead,billing,medium,neutral
+242,How do I switch the payment method to a company card,billing,medium,neutral
+243,Can we move the renewal date to the start of our financial year,billing,medium,neutral
+244,Need the last four invoices as a single PDF,billing,medium,neutral
+245,What is your policy on refunds after fourteen days,billing,low,neutral
+246,Do you charge extra for additional storage,billing,low,neutral
+247,Is there a setup fee for new accounts,billing,low,neutral
+248,How is usage measured for the metered plan,billing,low,neutral
+249,Can I see a breakdown of what each line item covers,billing,low,neutral
+250,Would a two year commitment reduce the price,billing,low,neutral
+251,Do you accept purchase orders from public sector bodies,billing,low,neutral
+252,What happens to billing if we pause the account for a month,billing,low,neutral
+253,Is VAT charged for customers outside the UK,billing,low,neutral
+254,Can the invoice show our registered company number,billing,low,neutral
+255,"Billing team sorted my duplicate charge within an hour, excellent",billing,low,positive
+256,"Really clear invoices, easy to reconcile, thank you",billing,low,positive
+257,Happy with the plan and considering adding more seats,billing,low,positive
+258,"Thanks for honouring the old rate, that was generous",billing,low,positive
+259,The new billing dashboard is a big improvement,billing,low,positive
+260,"Appreciate the reminder email before renewal, very helpful",billing,low,positive
+261,Pleased with how simple the upgrade process was,billing,low,positive
+262,"Grateful for the prorated credit, that resolved it",billing,low,positive
+263,Direct debit mandate has been cancelled by my bank,billing,medium,negative
+264,Discount was applied to the wrong line on the invoice,billing,medium,negative
+265,Can I get an itemised receipt for expenses,billing,low,neutral
+266,Does the plan include support or is that separate,billing,low,neutral
+267,Invoice arrived in the wrong currency again,billing,medium,negative
+268,Payment page rejects my card without giving a reason,billing,high,negative
+269,How far back can I download billing history,billing,low,neutral
+270,Courier attempted delivery without ringing the bell,shipping,medium,negative
+271,Consignment has been sitting at the depot for four days,shipping,high,negative
+272,Driver marked it as refused but nobody was asked,shipping,high,negative
+273,Pallet arrived with three cartons water damaged,shipping,high,negative
+274,Shipment split across two deliveries without warning,shipping,medium,negative
+275,Goods delivered to reception and nobody signed for them,shipping,medium,negative
+276,Order dispatched to the billing address not the delivery address,shipping,high,negative
+277,Overnight service arrived three days late,shipping,high,negative
+278,Carrier lost the parcel and is not responding,shipping,high,negative
+279,Return was collected two weeks ago and not yet credited,shipping,high,negative
+280,Can I collect the order from the depot myself,shipping,medium,neutral
+281,Is a delivery on a bank holiday weekend possible,shipping,low,neutral
+282,What are your cut off times for next day dispatch,shipping,low,neutral
+283,Do you offer a timed delivery slot for large items,shipping,low,neutral
+284,Which carrier handles deliveries to the Highlands,shipping,low,neutral
+285,Can the courier call ahead before arriving,shipping,low,neutral
+286,How do I add loading bay instructions to the order,shipping,medium,neutral
+287,Is a signature required on delivery,shipping,low,neutral
+288,Can I redirect a parcel that has already been dispatched,shipping,medium,neutral
+289,Do you deliver to BFPO addresses,shipping,low,neutral
+290,What size vehicle should we expect for a pallet delivery,shipping,low,neutral
+291,How do I book a collection for a warranty return,shipping,medium,neutral
+292,Are weekend deliveries available in central London,shipping,low,neutral
+293,Can two orders be consolidated into a single consignment,shipping,low,neutral
+294,Do you provide proof of delivery on request,shipping,low,neutral
+295,"Delivery arrived exactly in the slot promised, very good",shipping,low,positive
+296,"Driver was helpful and carried it inside, much appreciated",shipping,low,positive
+297,"Packaging was excellent, nothing damaged at all",shipping,low,positive
+298,"Fast dispatch and clear tracking, no complaints",shipping,low,positive
+299,Pleased you now offer Saturday delivery,shipping,low,positive
+300,"Returns process was painless, thanks",shipping,low,positive
+301,Great to see plastic free packaging on the last order,shipping,low,positive
+302,"Courier rescheduled easily when I was out, very flexible",shipping,low,positive
+303,Tracking page has not updated since it left the warehouse,shipping,medium,negative
+304,"Wrong quantity delivered, ordered ten received four",shipping,high,negative
+305,Parcel left in a bin store and now missing,shipping,high,negative
+306,Delivery note does not match what was in the box,shipping,medium,negative
+307,Can I nominate a safe place for future deliveries,shipping,low,neutral
+308,How long do you hold an undelivered parcel at the depot,shipping,low,neutral
+309,Is there a surcharge for offshore postcodes,shipping,low,neutral
+310,"Cannot sign in, it says my credentials are invalid",account,high,negative
+311,Account locked after a password manager filled the wrong entry,account,high,negative
+312,Colleague still has access three months after leaving,account,high,negative
+313,Login page rejects the code from my authenticator app,account,high,negative
+314,Received a password change email I did not request,account,high,negative
+315,Workspace disappeared from my list this morning,account,high,negative
+316,Invitation link says it has already been used,account,medium,negative
+317,Cannot remove a user who no longer works here,account,medium,negative
+318,Email change request never sent the confirmation,account,medium,negative
+319,Signed out unexpectedly several times today,account,medium,negative
+320,How do I set up single sign on with our identity provider,account,medium,neutral
+321,Can I restrict access by IP address,account,medium,neutral
+322,What is the process for transferring account ownership,account,medium,neutral
+323,How do I create a read only role for auditors,account,medium,neutral
+324,Is there a way to enforce two factor for everyone,account,medium,neutral
+325,Can I see when each member last signed in,account,low,neutral
+326,How many seats does the current plan include,account,low,neutral
+327,Where do I find the account identifier for support,account,low,neutral
+328,Can I rename the workspace after creating it,account,low,neutral
+329,Is there an option to hide my email from other members,account,low,neutral
+330,How do I set a default timezone for the team,account,low,neutral
+331,Can I use the same login across two organisations,account,low,neutral
+332,What is your data retention policy for closed accounts,account,low,neutral
+333,Do you support SCIM provisioning,account,low,neutral
+334,How do I download an export of everything before leaving,account,medium,neutral
+335,"Onboarding was very smooth, the whole team is set up",account,low,positive
+336,"Support helped me recover access quickly, thank you",account,low,positive
+337,"Permissions model is well thought out, easy to configure",account,low,positive
+338,"Two factor setup took two minutes, nicely done",account,low,positive
+339,Really like being able to see the login history,account,low,positive
+340,"Glad you added single sign on, that was the blocker for us",account,low,positive
+341,Invitation flow is clear and my team had no questions,account,low,positive
+342,Thanks for extending the trial while we finished procurement,account,low,positive
+343,Recovery email is an old address I can no longer access,account,high,negative
+344,"New member cannot accept the invitation, link expires instantly",account,high,negative
+345,Profile changes revert after a few minutes,account,medium,negative
+346,Is there a limit on the number of workspaces,account,low,neutral
+347,Can I merge a personal account into the company one,account,medium,neutral
+348,Notification settings do not persist between sessions,account,medium,negative
+349,Do you offer audit logs for compliance reporting,account,low,neutral
+350,Browser console shows a CORS error when loading the widget,technical,high,negative
+351,API returns 500 on every request to the reports endpoint,technical,high,negative
+352,Webhook deliveries stopped without any change on our side,technical,high,negative
+353,Bulk import times out after processing about two hundred rows,technical,high,negative
+354,"Search index appears stale, new records do not appear",technical,high,negative
+355,File upload returns a 413 for anything over two megabytes,technical,high,negative
+356,OAuth callback fails with an invalid redirect uri,technical,high,negative
+357,Rate limit headers are missing from API responses,technical,medium,negative
+358,Pagination returns duplicate records across pages,technical,high,negative
+359,Timestamps come back in UTC but the docs say local,technical,medium,negative
+360,Dashboard charts do not render in Firefox,technical,medium,negative
+361,"Cache seems stale, changes take an hour to appear",technical,medium,negative
+362,Editor loses formatting when pasting from a document,technical,medium,negative
+363,Mobile app crashes when opening the attachments tab,technical,high,negative
+364,Scheduled export produced an empty file this week,technical,high,negative
+365,Sorting by date puts blank values first,technical,low,negative
+366,Is there a staging environment for testing integrations,technical,low,neutral
+367,What is the rate limit on the public API,technical,low,neutral
+368,Do you publish an OpenAPI specification,technical,low,neutral
+369,Which webhook events are available,technical,low,neutral
+370,How do I rotate an API key without downtime,technical,medium,neutral
+371,Is there a bulk endpoint for creating records,technical,low,neutral
+372,What is the maximum payload size for the API,technical,low,neutral
+373,Do you support webhooks with a signing secret,technical,low,neutral
+374,How long are logs retained in the console,technical,low,neutral
+375,Is there a browser extension available,technical,low,neutral
+376,Can the export include custom fields,technical,low,neutral
+377,Does the API support filtering by date range,technical,low,neutral
+378,"The latest release fixed the import bug, thanks for the quick work",technical,low,positive
+379,API is well designed and the docs are genuinely good,technical,low,positive
+380,Performance improvement this week is very noticeable,technical,low,positive
+381,New filtering options are exactly what we needed,technical,low,positive
+382,"Integration took an afternoon, very straightforward",technical,low,positive
+383,Appreciate the detailed changelog on every release,technical,low,positive
+384,"Webhook retries saved us during an outage, well designed",technical,low,positive
+385,Really pleased with the new bulk edit feature,technical,low,positive
+386,Session token expires far sooner than documented,technical,medium,negative
+387,Error messages do not say which field was rejected,technical,medium,negative
+388,Console throws a null reference when the list is empty,technical,medium,negative
+389,Is there a sandbox key for automated tests,technical,low,neutral
