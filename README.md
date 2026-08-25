@@ -366,6 +366,38 @@ anything. The trained model learns from context that "login", "password" and
 Both are free to run. They cost different things: one costs a dataset, the other
 costs 70&times; the latency and a GPU to keep it reasonable.
 
+### What this points at next — a per-class router
+
+Not implemented. Recording it here because the evidence for it is already in the
+table above, and the reasoning is worth more than the code would be.
+
+The two approaches are not better and worse, they are **better at different
+classes** - and the split is not random. It follows from how each one represents
+a ticket:
+
+| Category | Winner | Why |
+|---|---|---|
+| `technical` | zero-shot, +8.3 | four unrelated problems, no shared vocabulary for word counts to learn |
+| `account` | trained, +33.3 | "account" appears in every category, so as a hypothesis it entails almost anything |
+
+Routing each category to whichever approach wins it would score around **89%** on
+this data, above either alone. Two things to be honest about before claiming that:
+
+**It is chosen on the same data it would be measured on.** Picking the per-class
+winner from the table and then reporting the combined score is the grid-search
+mistake this README already documents in another form - any decision made by
+looking at the test set stops the test set being a test. A real version needs the
+routing decided on one split and scored on another.
+
+**Two models is a real operational cost.** 4 MB and 2 ms becomes 1.6 GB and 140
+ms for the tickets that route to zero-shot, plus a second failure mode to
+monitor. Worth it for +2 points only if `technical` volume is high.
+
+The more interesting version routes on **confidence** rather than class: the
+trained model already reports a calibrated probability, so anything below its
+threshold could go to the zero-shot model instead of a human - which is the same
+routing rule the project already uses, with a cheaper fallback than a person.
+
 ---
 
 ## Why no LLM
