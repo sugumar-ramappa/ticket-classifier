@@ -3,17 +3,37 @@
 from rich.console import Console
 from rich.table import Table
 
-from src.classifier import evaluate_model, save_model, train_model
+from src.classifier import (cross_validated_score, evaluate_model,
+                            majority_baseline, save_model, train_model)
 from src.data_loader import load_data, split_for
 
 console = Console()
+df_global = None
+
+
+def report(target: str, single_split: float, y) -> None:
+    """Print both numbers, and say which one to quote.
+
+    The single split figure is what just got computed, so it is printed - but on
+    a few hundred rows it is a lottery. The same model and data gave 93.6% on one
+    split and 73.9% on another. The cross-validated mean is the honest number and
+    the baseline is what makes it mean anything.
+    """
+    mean, sd = cross_validated_score(df_global["text"], y, target)
+    base = majority_baseline(y)
+
+    console.print(f"  this split      {single_split:.1%}   <- one test, do not quote this")
+    console.print(f"  [bold]5-fold average  {mean:.1%} +/-{sd:.1%}[/bold]   <- the honest number")
+    console.print(f"  always guessing {base:.1%}   <- what beating it has to mean\n")
 
 
 def main():
     console.print("\n[bold blue]Training Ticket Classifier[/bold blue]\n")
 
     # Load and split data
+    global df_global
     df = load_data()
+    df_global = df
     console.print(f"Loaded {len(df)} tickets")
     console.print(f"Categories: {df['category'].value_counts().to_dict()}")
     console.print(f"Priorities: {df['priority'].value_counts().to_dict()}")
@@ -37,21 +57,21 @@ def main():
     cat_model = train_model(cat_X_train, y_cat_train, "category")
     cat_metrics = evaluate_model(cat_model, cat_X_test, y_cat_test)
     save_model(cat_model, "category_classifier")
-    console.print(f"  Accuracy: {cat_metrics['accuracy']:.2%}\n")
+    report("category", cat_metrics["accuracy"], df["category"])
 
     # Train priority classifier
     console.print("[bold]Training priority classifier...[/bold]")
     pri_model = train_model(pri_X_train, y_pri_train, "priority")
     pri_metrics = evaluate_model(pri_model, pri_X_test, y_pri_test)
     save_model(pri_model, "priority_classifier")
-    console.print(f"  Accuracy: {pri_metrics['accuracy']:.2%}\n")
+    report("priority", pri_metrics["accuracy"], df["priority"])
 
     # Train sentiment classifier
     console.print("[bold]Training sentiment classifier...[/bold]")
     sent_model = train_model(sen_X_train, y_sent_train, "sentiment")
     sent_metrics = evaluate_model(sent_model, sen_X_test, y_sent_test)
     save_model(sent_model, "sentiment_classifier")
-    console.print(f"  Accuracy: {sent_metrics['accuracy']:.2%}\n")
+    report("sentiment", sent_metrics["accuracy"], df["sentiment"])
 
     # Show results
     table = Table(title="Classification Report — Category")

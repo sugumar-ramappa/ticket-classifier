@@ -1,10 +1,12 @@
 """Train, evaluate, save, and load ML classifiers."""
 
+from collections import Counter
 from pathlib import Path
 
 import joblib
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.pipeline import Pipeline
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -132,3 +134,34 @@ def load_model(name: str) -> Pipeline:
     if not path.exists():
         raise FileNotFoundError(f"Model not found: {path}")
     return joblib.load(path)
+
+
+def cross_validated_score(X, y, target: str, folds: int = 5) -> tuple[float, float]:
+    """Accuracy averaged over `folds` different splits, and how much it varies.
+
+    WHY THIS EXISTS ALONGSIDE evaluate_model
+    evaluate_model scores one split. On a few hundred rows that is a lottery -
+    the same model and the same data gave 93.6% on one split and 73.9% on
+    another. Quoting either would be quoting the shuffle.
+
+    This trains `folds` times, each time holding out a different fifth, so every
+    row is tested exactly once. The mean is the number worth reporting and the
+    standard deviation says how much to trust it: +/-9.5% means a single test
+    could be ten points out, +/-3.6% means it is roughly settled.
+
+    Stratified, so each fold keeps the same class mix as the whole dataset.
+    """
+    cv = StratifiedKFold(n_splits=folds, shuffle=True, random_state=42)
+    scores = cross_val_score(build_pipeline(target), X, y, cv=cv, scoring="accuracy")
+    return float(scores.mean()), float(scores.std())
+
+
+def majority_baseline(y) -> float:
+    """What you would score by ignoring the ticket and always guessing the
+    most common label.
+
+    The only number that makes an accuracy figure mean anything. A sentiment
+    model scoring 58.7% sounds reasonable until this returns 56.5%.
+    """
+    counts = Counter(y)
+    return counts.most_common(1)[0][1] / len(y)

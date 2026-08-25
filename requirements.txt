@@ -6,3 +6,10 @@ joblib>=1.4.0
 python-dotenv>=1.0.0
 rich>=13.0.0
 pytest>=8.0
+
+# Zero-shot comparison only (scripts/zero_shot.py). The trained classifier, the
+# API and the whole test suite run without these - they are ~2.5 GB installed
+# and pull a 1.6 GB model on first use, so they are listed last and deliberately
+# not imported anywhere in src/classifier.py.
+torch>=2.0.0
+transformers>=4.40.0
