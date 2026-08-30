@@ -1,5 +1,11 @@
 """Train the ticket classifier models."""
 
+import json
+import platform
+from datetime import datetime, timezone
+from pathlib import Path
+
+import sklearn
 from rich.console import Console
 from rich.table import Table
 
@@ -11,13 +17,18 @@ console = Console()
 df_global = None
 
 
-def report(target: str, single_split: float, y) -> None:
-    """Print both numbers, and say which one to quote.
+def report(target: str, single_split: float, y) -> dict:
+    """Print both numbers, say which one to quote, and return them to be recorded.
 
     The single split figure is what just got computed, so it is printed - but on
     a few hundred rows it is a lottery. The same model and data gave 93.6% on one
     split and 73.9% on another. The cross-validated mean is the honest number and
     the baseline is what makes it mean anything.
+
+    Returning them rather than only printing is what lets `main` write
+    `results.json`. A number that exists only in terminal scrollback cannot be
+    checked by anyone later, including you - which is the failure this project's
+    sibling hit when its latency figures survived in a README and nowhere else.
     """
     mean, sd = cross_validated_score(df_global["text"], y, target)
     base = majority_baseline(y)
@@ -25,6 +36,15 @@ def report(target: str, single_split: float, y) -> None:
     console.print(f"  this split      {single_split:.1%}   <- one test, do not quote this")
     console.print(f"  [bold]5-fold average  {mean:.1%} +/-{sd:.1%}[/bold]   <- the honest number")
     console.print(f"  always guessing {base:.1%}   <- what beating it has to mean\n")
+
+    return {
+        "target": target,
+        "single_split_accuracy": round(single_split, 4),
+        "cross_validated_mean": round(mean, 4),
+        "cross_validated_sd": round(sd, 4),
+        "majority_baseline": round(base, 4),
+        "quote": "cross_validated_mean",
+    }
 
 
 def main():
@@ -52,26 +72,28 @@ def main():
     sen_X_train, sen_X_test, y_sent_train, y_sent_test = split_for(df, "sentiment")
     console.print(f"Train: {len(cat_X_train)} | Test: {len(cat_X_test)}\n")
 
+    results: list[dict] = []
+
     # Train category classifier
     console.print("[bold]Training category classifier...[/bold]")
     cat_model = train_model(cat_X_train, y_cat_train, "category")
     cat_metrics = evaluate_model(cat_model, cat_X_test, y_cat_test)
     save_model(cat_model, "category_classifier")
-    report("category", cat_metrics["accuracy"], df["category"])
+    results.append(report("category", cat_metrics["accuracy"], df["category"]))
 
     # Train priority classifier
     console.print("[bold]Training priority classifier...[/bold]")
     pri_model = train_model(pri_X_train, y_pri_train, "priority")
     pri_metrics = evaluate_model(pri_model, pri_X_test, y_pri_test)
     save_model(pri_model, "priority_classifier")
-    report("priority", pri_metrics["accuracy"], df["priority"])
+    results.append(report("priority", pri_metrics["accuracy"], df["priority"]))
 
     # Train sentiment classifier
     console.print("[bold]Training sentiment classifier...[/bold]")
     sent_model = train_model(sen_X_train, y_sent_train, "sentiment")
     sent_metrics = evaluate_model(sent_model, sen_X_test, y_sent_test)
     save_model(sent_model, "sentiment_classifier")
-    report("sentiment", sent_metrics["accuracy"], df["sentiment"])
+    results.append(report("sentiment", sent_metrics["accuracy"], df["sentiment"]))
 
     # Show results
     table = Table(title="Classification Report — Category")
@@ -105,7 +127,45 @@ def main():
         sent = sent_model.predict([text])[0]
         console.print(f"  '{text}' → category={cat}, priority={pri}, sentiment={sent}")
 
+    write_results(results, df, len(cat_X_train), len(cat_X_test))
+
     console.print("\n[bold green]✓ Models saved to models/[/bold green]")
+
+
+def write_results(results: list[dict], df, n_train: int, n_test: int) -> None:
+    """Record the run so its numbers can be checked without re-reading a terminal.
+
+    Everything here is seeded - `random_state=42` on the classifier, on the
+    stratified folds and on the splits - so re-running reproduces this file
+    exactly. That is what makes it a receipt rather than a snapshot: a reader who
+    doubts a figure can run the script and diff.
+
+    The library version is recorded for the case where it stops reproducing.
+    scikit-learn has changed default solvers between minor versions, and a number
+    that moved for that reason looks identical to one that moved because the data
+    changed.
+    """
+    out = Path(__file__).resolve().parents[1] / "results.json"
+    payload = {
+        "recordedAt": datetime.now(timezone.utc).isoformat(),
+        "tickets": len(df),
+        "train": n_train,
+        "test": n_test,
+        "seed": 42,
+        "folds": 5,
+        "deterministic": True,
+        "scikit_learn": sklearn.__version__,
+        "python": platform.python_version(),
+        "note": (
+            "Quote cross_validated_mean, never single_split_accuracy. On a few "
+            "hundred rows one split is a lottery - the same model and data gave "
+            "93.6% and 73.9% on two different splits. majority_baseline is what "
+            "makes the mean mean anything."
+        ),
+        "targets": results,
+    }
+    out.write_text(json.dumps(payload, indent=2) + "\n")
+    console.print(f"[bold]Results written to {out.name}[/bold]")
 
 
 if __name__ == "__main__":

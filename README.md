@@ -119,6 +119,17 @@ pytest
 over all rows**, not a single split - on a 78 row test set a four point
 difference is three tickets, which is noise.
 
+Every number below is written to [`results.json`](results.json) by
+`python -m scripts.train`, alongside the seed, fold count and scikit-learn
+version. **The run is fully deterministic** - `random_state=42` on the
+classifier, the stratified folds and the splits - so re-running reproduces that
+file exactly, and anyone doubting a figure can run the script and diff rather
+than take the README's word for it.
+
+The file also records `single_split_accuracy` next to the cross-validated mean,
+which is the point rather than clutter: category scores **93.6% on this split**
+and **86.9%** across five. Quoting the first would be quoting the shuffle.
+
 | Target | Accuracy | Baseline | Margin |
 |---|---|---|---|
 | Category | **86.9%** ± 3.6% | 25.7% | +61pp |

@@ -1,0 +1,38 @@
+{
+  "recordedAt": "2026-08-30T13:54:09.835143+00:00",
+  "tickets": 389,
+  "train": 311,
+  "test": 78,
+  "seed": 42,
+  "folds": 5,
+  "deterministic": true,
+  "scikit_learn": "1.3.2",
+  "python": "3.11.6",
+  "note": "Quote cross_validated_mean, never single_split_accuracy. On a few hundred rows one split is a lottery - the same model and data gave 93.6% and 73.9% on two different splits. majority_baseline is what makes the mean mean anything.",
+  "targets": [
+    {
+      "target": "category",
+      "single_split_accuracy": 0.9359,
+      "cross_validated_mean": 0.8689,
+      "cross_validated_sd": 0.0358,
+      "majority_baseline": 0.2571,
+      "quote": "cross_validated_mean"
+    },
+    {
+      "target": "priority",
+      "single_split_accuracy": 0.5641,
+      "cross_validated_mean": 0.5759,
+      "cross_validated_sd": 0.0465,
+      "majority_baseline": 0.4216,
+      "quote": "cross_validated_mean"
+    },
+    {
+      "target": "sentiment",
+      "single_split_accuracy": 0.6538,
+      "cross_validated_mean": 0.6814,
+      "cross_validated_sd": 0.0709,
+      "majority_baseline": 0.5167,
+      "quote": "cross_validated_mean"
+    }
+  ]
+}
